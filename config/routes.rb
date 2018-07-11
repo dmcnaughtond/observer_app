@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  root                'static_pages#home'
-  get 'help'      =>  'static_pages#help'
+  match '/static_pages/home', :to 'static_pages#home'
+  match '/static_pages/help', :to 'static_pages#help'
+
+  # root                'static_pages#home'
+  # get 'help'      =>  'static_pages#help'
 
 
   # get 'static_pages/home' => 'application#hello'
