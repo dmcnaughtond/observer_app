@@ -24,8 +24,8 @@ development:
   encoding: unicode
   database: observer_app_development
   pool: 5
-  username: blog
-  password:
+  username: postgres
+  password: 3mptyH3dd3d
   host: localhost
 
   # The specified database role being used to connect to postgres.
@@ -60,7 +60,13 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: observer_app_test
+  pool: 5
+  username: postgres
+  password: 3mptyH3dd3d
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
