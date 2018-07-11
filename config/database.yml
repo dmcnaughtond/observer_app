@@ -25,7 +25,7 @@ development:
   database: observer_app_development
   pool: 5
   username: postgres
-  password: 3mptyH3dd3d
+  password: 3mptyH3dd3D
   host: localhost
 
   # The specified database role being used to connect to postgres.
@@ -65,7 +65,7 @@ test:
   database: observer_app_test
   pool: 5
   username: postgres
-  password: 3mptyH3dd3d
+  password: 3mptyH3dd3D
   host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
