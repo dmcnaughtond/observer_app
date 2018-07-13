@@ -1,0 +1,47 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+@media (min-width: 576px) {
+}
+
+body {
+
+
+	padding-top: 60px;
+}
+
+.navbar-fixed-top {
+	min-height: 120px;
+	font-size: 60px;	
+}
+
+.navbar-fixed-bottom {
+	min-height: 120px;
+	font-size: 60px;
+	text-align: center;
+}
+
+.h1 {
+	margin-bottom: 40 px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+	h1 {
+  		margin-bottom: 10px;
+  	}
+}
+
+.button[type=sign_up] {
+	font-size: 48px;
+}

@@ -1,4 +1,29 @@
 <% provide(:title, "Home") %>
 
-	<h1>Home</h1>
+	<div class="center jumbotron">
+
+		<h1>Home</h1>
 		<p>This is the home page of the Class Observer application.</p>
+
+		<form class="form-inline">
+  			<label class="sr-only" for="inlineFormInputEmail2">Email</label>
+ 				<input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputEmail2" placeholder="Sign in with your email">
+
+
+
+  		<div class="form-check mb-2 mr-sm-2">
+    		<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+    			<label class="form-check-label" for="inlineFormCheck">
+      				Remember me
+    			</label>
+
+  		</div>
+
+  		<button type="submit" class="btn btn-secondary mb-2">Submit</button>
+  			<p>Create an account.</p>
+ 
+ 		<%= link_to "Sign up", signup_path, class: "btn btn-primary mb-2" %>
+
+		</form>
+
+	</div>
