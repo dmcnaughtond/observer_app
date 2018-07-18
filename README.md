@@ -25,6 +25,3 @@ Ruby 2.4.4p296
 * Deployment instructions
 
 * ...
-
-# observer_app
-

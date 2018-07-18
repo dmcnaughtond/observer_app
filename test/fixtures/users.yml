@@ -1,7 +1,11 @@
+
 rocky:
   name: rocky example
   email: rocky@rocky.com
   school: Bullwinkle Elementary
   password_digest: <%= User.digest('password') %>
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
 
 
