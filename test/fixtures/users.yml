@@ -7,5 +7,9 @@ rocky:
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-
+bullwinkle: 
+  name: bullwinkle example
+  email: bullwinkle@bullwinkle.com
+  school: Bullwinkle Elementary
+  password_digest: <%= User.digest('password') %>
 
