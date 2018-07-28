@@ -10,4 +10,8 @@
 
 <div>
 	<%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %>
+	  <% if current_user.admin? %>
+    | <%= link_to "Admin page", users_path,
+                                  class: "btn btn-primary" %>
+  <% end %>
 </div>

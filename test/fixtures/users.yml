@@ -4,8 +4,7 @@ rocky:
   email: rocky@rocky.com
   school: Bullwinkle Elementary
   password_digest: <%= User.digest('password') %>
-
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+  admin: true
 
 bullwinkle: 
   name: bullwinkle example
@@ -13,3 +12,16 @@ bullwinkle:
   school: Bullwinkle Elementary
   password_digest: <%= User.digest('password') %>
 
+natasha:
+  name: natasha example
+  email: natasha@bullwinkle.com
+  school: Bullwinkle Elementary
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email:  <%= "user-#{n}@example.com" %>
+  school:  <%= "School #{n}" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
