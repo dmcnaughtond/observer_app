@@ -13,6 +13,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get show" do
+    log_in_as(@user)
+    get user_path(@user)
+  end
+
+  test "should get index" do
+    log_in_as(@user)
+    get showall_path
+  end
+
+
   test "should redirect edit when not logged in" do
     get edit_user_path(@user)
     assert_not flash.empty?
@@ -63,12 +74,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-  # test "should redirect destroy when not logged in" do
-  #   assert_no_difference 'User.count' do
-  #     delete user_path(@user)
-  #   end
-  #   assert_redirected_to login_url
-  # end
+  test "should redirect show when logged in as wrong user" do
+    log_in_as(@other_user)
+    get user_path(@user)
+    assert_redirected_to root_url
+  end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'User.count' do
+      delete user_path(@user)
+    end
+    assert_redirected_to login_url
+  end
 
   test "should redirect destroy when logged in as a non-admin" do
     log_in_as(@other_user)

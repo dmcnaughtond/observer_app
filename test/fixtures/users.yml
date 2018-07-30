@@ -5,18 +5,24 @@ rocky:
   school: Bullwinkle Elementary
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 bullwinkle: 
   name: bullwinkle example
   email: bullwinkle@bullwinkle.com
   school: Bullwinkle Elementary
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 natasha:
   name: natasha example
   email: natasha@bullwinkle.com
   school: Bullwinkle Elementary
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
@@ -24,4 +30,6 @@ user_<%= n %>:
   email:  <%= "user-#{n}@example.com" %>
   school:  <%= "School #{n}" %>
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
