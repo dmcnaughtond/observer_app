@@ -1,0 +1,15 @@
+<% provide(:title, 'Create a student') %>
+	<h1>Create a student</h1>
+	
+
+
+        <%= form_for(@student) do |f| %>
+
+          <%= f.label :name, "Student name" %>
+          <%= f.text_field :name, class: 'form-control' %>
+
+
+        <%= params.inspect %>
+
+      <%= f.submit "Create student", class: "btn btn-primary" %>
+<% end %>

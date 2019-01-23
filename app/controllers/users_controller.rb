@@ -5,7 +5,9 @@ class UsersController < ApplicationController
  
 
   def show
-      render 'show'
+    @user = User.find(params[:id])
+    @rooms = @user.rooms
+   
   end
 
   def index
@@ -16,11 +18,12 @@ class UsersController < ApplicationController
     # end
   end
 
+
   def new
   	@user = User.new
   end
 
-    def create
+  def create
     @user = User.new(user_params)   
     if @user.save
       @user.send_activation_email
@@ -32,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
@@ -55,21 +58,17 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :school, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, 
+                                    :rooms_attributes => [ :id, :number,
+                                      :students_attributes => [ :id, :name ]
+                                    ]
+                                   )
+                                    
+  
+                                   
+
     end
 
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
-
-    def correct_user
-      @user = User.where(activated: true).find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
 
     def admin_user
       redirect_to(root_url) unless current_user.admin?  

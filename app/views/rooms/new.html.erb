@@ -1,0 +1,21 @@
+<% provide(:title, 'Create a class') %>
+	<h1>Create a class</h1>
+	
+    <%= form_with(model: @room, local: true) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :number, "Room number" %>
+          <%= f.number_field :number, id: :number %>
+
+
+            <%= f.fields_for :students do |s| %>
+              <%= s.label :name, "Student name" %>
+              <%= s.text_field :name, id: :student_name %>
+            <% end %>
+
+ 
+
+      <%= f.submit "Create class", class: "btn btn-primary" %>
+      
+<% end %>

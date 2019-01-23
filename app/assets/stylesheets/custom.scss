@@ -14,20 +14,26 @@ body {
 }
 
 .navbar-fixed-top {
-	min-height: 120px;
+	min-height: 80px;
 	font-size: 60px;
   text-align: center;	
 
 }
 
+.container {
+  padding-top: 60px;
+  font-size: 20px;
+}
+
 .navbar-fixed-bottom {
-	min-height: 120px;
+	min-height: 80px;
 	font-size: 60px;
 	text-align: center;
 }
 
 .h1 {
 	margin-bottom: 40 px;
+  text-align: center;
 }
 
 section {
@@ -135,5 +141,15 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* rooms index */
+
+.rooms {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
   }
 }

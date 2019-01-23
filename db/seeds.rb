@@ -28,3 +28,9 @@ User.create!([{name:  "Example User",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(5)
+  5.times do
+    number = Faker::Number.number(3)
+    users.each { |user| user.rooms.create!(number: number) }
+end

@@ -1,15 +1,19 @@
 class User < ApplicationRecord
+	has_many 		:rooms, dependent: :destroy
+	has_many		:students, through: :rooms
+	accepts_nested_attributes_for	:rooms, allow_destroy: true, reject_if: proc { |attributes| attributes['number'].blank? }
+	accepts_nested_attributes_for	:students, allow_destroy: true														
 	attr_accessor	:remember_token, :activation_token, :reset_token
 	before_save 	:downcase_email
 	before_create	:create_activation_digest
-	validates :name, presence: true, length: { maximum: 50 }
+	validates		:name, presence: true, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-	validates :email, presence: true, length: { maximum: 255 },
-		format: { with: VALID_EMAIL_REGEX },
-		uniqueness: { case_sensitive: false }
-	validates :school, presence: true, length: { maximum: 50 }
+	validates		:email, presence: true, length: { maximum: 255 },
+					format: { with: VALID_EMAIL_REGEX },
+					uniqueness: { case_sensitive: false }
+	validates		:school, presence: true, length: { maximum: 50 }
 	has_secure_password 
-	validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
+	validates		:password, presence: true, length: { minimum: 8 }, allow_nil: true
 
 
 

@@ -1,0 +1,9 @@
+<li id="room-<%= room.id %>">
+
+  <span class="number"><%= link_to room.number, user_room_path(current_user, room) %></span>
+  	 <% if current_user?(room.user) %>
+      <%= link_to "delete", room, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+
+</li>

@@ -1,0 +1,7 @@
+<li id="student-<%= student.id %>">
+
+	  <span class="name"><%= student.name %></span>
+      <%= link_to "delete", student, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+
+</li>

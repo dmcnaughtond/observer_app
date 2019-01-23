@@ -1,0 +1,30 @@
+<% provide(:title, @number) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>Room</h1><%= @number %>
+    </section>
+  </aside>
+</div>
+<div class="col-md-8">
+    <% if @room.students.any? %>
+      <h1>Students</h1>
+      <ol class="students">
+        <%= render @room.students %>
+      </ol>
+    <% end %>
+
+</div>
+    <%= form_with(model: @room, local: true) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+
+            <%= f.fields_for :students do |s| %>
+              <%= s.label :name, "Student name" %>
+              <%= s.text_field :name, id: :student_name %>
+            <% end %>
+
+ 
+
+      <%= f.submit "Add student", class: "btn btn-primary" %>
+<% end %>

@@ -86,5 +86,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test "associated rooms should be destroyed" do
+    @user.save
+    @user.rooms.create!(number: "200")
+    assert_difference 'Room.count', -1 do
+      @user.destroy
+    end
+  end
 
 end

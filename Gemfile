@@ -7,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.7'
+gem 'rails', '5.1.6'
 
-gem 'bcrypt',         '3.1.12'
+gem 'bcrypt', '3.1.12'
 
 gem 'faker', '1.8.7'
 
@@ -51,11 +51,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'better_errors', '2.1.1'
+  gem 'meta_request'
+  gem 'binding_of_caller', '0.8.0'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+
 end
 
 group :test do
